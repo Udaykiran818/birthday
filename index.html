@@ -10,9 +10,10 @@
 <body style="
     background-color: #000000;
     text-align: center;
-    color: #D3D3D3;
+    color: #FFFFFF;
     margin: 0;
     padding: 40px;
+    min-height: 100vh;
 ">
 
     <!-- Birthday Heading -->
@@ -20,62 +21,89 @@
         font-family: Georgia, serif;
         font-weight: bold;
         font-size: 58px;
-        color: #D3D3D3;
+        color: #FFFFFF;
         margin-top: 30px;
+        text-shadow: 0 0 8px #FFFFFF, 0 0 15px #FFFFFF;
     ">
-        HAPPY BIRTHDAY RAHH ❤️
+        HAPPY BIRTHDAY ❤️
     </h1>
 
     <!-- Friend Name -->
     <h2 style="
         font-family: 'Paul Jackson', cursive;
         font-size: 35px;
-        color: #D3D3D3;
+        color: #FFFFFF;
+        text-shadow: 0 0 2px #FFFFFF, 0 0 14px #FFFFFF;
     ">
         Sudheeruuu
     </h2>
 
     <!-- Birthday Message -->
-<p style="
+<p id="birthdayText" style="
     font-family: Georgia, serif;
     font-size: 20px;
     line-height: 1.8;
     color: #FFFFFF;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-">
-    Your a wonderful and My favorite friend
-    <br>
-    Thank you for being with meee 🥹💖
-</p>
-     
-    </p>
+    text-shadow: 0 0 2px #FFFFFF, 0 0 12px #FFFFFF;
+    min-height: 75px;
+"></p>
+
+<script>
+    const text = "Your a wonderful and My favorite friend";
+    const text2 = "Thank you for being with meee 🥹💖";
+
+    const element = document.getElementById("birthdayText");
+
+    let i = 0;
+
+    function typeText() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeText, 70);
+        } else {
+            element.innerHTML += "<br>";
+            i = 0;
+            typeText2();
+        }
+    }
+
+    function typeText2() {
+        if (i < text2.length) {
+            element.innerHTML += text2.charAt(i);
+            i++;
+            setTimeout(typeText2, 70);
+        }
+    }
+
+    typeText();
+</script>
 
     <!-- Us Together -->
     <a href="together.html" style="
         text-decoration: none;
-        color: #D3D3D3;
+        color: #FFFFFF;
     ">
 
         <h2 style="
             font-family: Georgia, serif;
             font-size: 30px;
-            color: #D3D3D3;
+            color: #FFFFFF;
             margin-top: 60px;
             cursor: pointer;
+            text-shadow: 0 0 2px #FFFFFF, 0 0 14px #FFFFFF;
         ">
             Us Together 🫂
         </h2>
 
         <p style="
             font-size: 18px;
-            color: #D3D3D3;
+            color: #FFFFFF;
             cursor: pointer;
+            text-shadow: 0 0 2px #FFFFFF, 0 0 12px #FFFFFF;
         ">
-
             <br>
             <small>Click here 🙈</small>
-
-            
         </p>
 
     </a>
@@ -83,4 +111,3 @@
 </body>
 
 </html>
-```
