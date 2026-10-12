@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,41 +8,71 @@
 
     <title>Happy Birthday ❤️</title>
 
-    <!-- CSS File Link -->
+    <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts: Cartoon Style -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
           rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap"
-      rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- Birthday Heading -->
-    <h1>
-        <span>HAPPY</span><br>
-        <span class="birthday-yellow">BIRTHDAY</span> ❤️
-    </h1>
+    <!-- MAIN LAYOUT -->
+    <div class="birthday-layout">
 
-    <!-- Rounded Sudheer Name Box -->
-    <div class="name-box">
-        <span>23 October 2006</span>
+        <!-- LEFT SIDE: BIRTHDAY TEXT -->
+        <div class="birthday-content">
+
+            <!-- Birthday Heading -->
+            <h1>
+                <span>HAPPY</span><br>
+                <span class="birthday-yellow">BIRTHDAY</span> ❤️
+            </h1>
+
+            <!-- Date Box -->
+            <div class="name-box">
+                <span>23 October 2006</span>
+            </div>
+
+            <!-- Friend Name -->
+            <h2 class="friend-name">Sudheeruuu</h2>
+
+            <!-- Birthday Message -->
+            <p id="birthdayText"></p>
+
+            <!-- Us Together -->
+            <a href="together.html" class="together-link">
+
+                <h2 class="together-heading">Us Together 🫂</h2>
+
+                <p class="click-text">
+                    <small>Click here 🙈</small>
+                </p>
+
+            </a>
+
+        </div>
+
+        <!-- RIGHT SIDE: VIDEO CLIP -->
+        <div class="birthday-video">
+
+            <video autoplay muted loop playsinline controls>
+                <source src="birthday-video.mp4" type="video/mp4">
+                Your browser does not support the video.
+            </video>
+
+        </div>
+
     </div>
 
-    <!-- Friend Name -->
-    <h2 class="friend-name">Sudheeruuu</h2>
-
-    <!-- Birthday Message -->
-    <p id="birthdayText"></p>
-
-    <!-- Typing Animation -->
+    <!-- TYPING ANIMATION -->
     <script>
         const text = "Your a wonderful and My favorite friend";
         const text2 = "Thank you for being with meee 🥹💖";
@@ -74,18 +104,6 @@
         typeText();
     </script>
 
-    <!-- Us Together -->
-    <a href="together.html" class="together-link">
-
-        <h2 class="together-heading">Us Together 🫂</h2>
-
-        <p class="click-text">
-            <br>
-            <small>Click here 🙈</small>
-        </p>
-
-    </a>
-
 </body>
 </html>
-
+```
