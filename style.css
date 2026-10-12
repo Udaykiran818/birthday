@@ -1,333 +1,75 @@
-```css
-/* ===== NARUTO BIRTHDAY THEME ===== */
 
-* {
-    box-sizing: border-box;
+/* ===== LEFT TEXT + RIGHT VIDEO LAYOUT ===== */
+
+.birthday-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 35px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* ===== LEFT SIDE TEXT ===== */
 
-body {
-    margin: 0;
-    padding: 35px 5%;
-    min-height: 100vh;
-    overflow-x: hidden;
-
-    font-family: Georgia, serif;
-    color: #FFFFFF;
-    text-align: center;
-
-    background-image:
-        linear-gradient(
-            rgba(15, 10, 10, 0.48),
-            rgba(15, 10, 10, 0.58)
-        ),
-        url("nartuobackground.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    animation: pageEnter 1.3s ease-out;
-}
-
-/* ===== WEBSITE OPENING ===== */
-
-@keyframes pageEnter {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== HAPPY BIRTHDAY HEADING ===== */
-
-h1 {
-    font-family: 'Lilita One', cursive;
-    font-size: clamp(55px, 10vw, 100px);
-    font-weight: 400;
-    line-height: 0.95;
+.birthday-content {
+    min-width: 0;
     text-align: left;
-
-    margin: 20px 0;
-
-    color: #FFFFFF;
-    -webkit-text-stroke: 2px #000000;
-
-    text-shadow:
-        3px 4px 0 #000000,
-        5px 6px 0 #000000;
-
-    animation: headingEnter 1.5s ease-out;
 }
 
-/* ===== BIRTHDAY YELLOW COLOUR ===== */
-
-.birthday-yellow {
-    color: #FFD700;
-    -webkit-text-stroke: 2px #000000;
-
-    text-shadow:
-        3px 4px 0 #000000,
-        5px 6px 0 #000000;
+.birthday-content h1 {
+    text-align: left;
 }
 
-/* ===== HEADING ANIMATION ===== */
-
-@keyframes headingEnter {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-        letter-spacing: 8px;
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-        letter-spacing: normal;
-    }
+.birthday-content #birthdayText {
+    text-align: left;
 }
 
-/* ===== DATE NAME BOX - LEFT SIDE ===== */
+.birthday-content .together-link {
+    text-align: left;
+}
 
-.name-box {
-    display: table;
+/* ===== RIGHT SIDE VIDEO ===== */
 
-    margin-top: 5px;
-    margin-bottom: 20px;
-    margin-left: 0;
-    margin-right: auto;
+.birthday-video {
+    width: 100%;
+}
 
-    padding: 9px 26px;
+.birthday-video video {
+    display: block;
+    width: 100%;
+    max-height: 75vh;
 
-    background: #FFF2B2;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+
     border: 3px solid #FFD700;
-    border-radius: 18px;
+    border-radius: 22px;
 
     box-shadow:
-        3px 4px 0 #000000,
-        0 0 10px rgba(255, 215, 0, 0.35);
-
-    animation: nameEnter 1.8s ease;
-}
-
-.name-box span {
-    display: inline-block;
-
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: clamp(23px, 4vw, 32px);
-    font-weight: 900;
-    font-style: italic;
-    letter-spacing: 2px;
-
-    color: #222222;
-    text-shadow: none;
-}
-
-/* ===== FRIEND NAME ===== */
-
-.friend-name {
-    font-family: 'Lilita One', cursive;
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 400;
-    color: #FFB74D;
-
-    -webkit-text-stroke: 1px #000000;
-
-    text-shadow:
-        2px 3px 0 #000000,
-        0 0 5px #FF6D00;
-
-    animation: nameEnter 1.8s ease;
-}
-
-@keyframes nameEnter {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== STYLISH BIRTHDAY MESSAGE ===== */
-
-#birthdayText {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(24px, 4vw, 32px);
-    font-weight: 700;
-    line-height: 1.8;
-
-    color: #FFF8E7;
-
-    text-shadow:
-        0 0 5px rgba(255, 183, 77, 0.7);
-
-    min-height: 75px;
-    overflow-wrap: anywhere;
-}
-
-/* ===== US TOGETHER LINK ===== */
-
-.together-link {
-    display: inline-block;
-    margin-top: 25px;
-
-    text-decoration: none;
-    color: #FFB74D;
-}
-
-.together-heading {
-    font-family: 'Lilita One', cursive;
-    font-size: 30px;
-    font-weight: 400;
-
-    color: #FFB74D;
-
-    text-shadow:
-        2px 3px 0 #000000,
-        0 0 8px #FF6D00;
-
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease;
-}
-
-.together-heading:hover {
-    color: #FFFFFF;
-    transform: scale(1.06);
-}
-
-.click-text {
-    color: #FFFFFF;
-    font-size: 18px;
-    text-shadow: 0 0 5px #FF9800;
-}
-
-/* ===== BUTTONS ===== */
-
-button {
-    font-family: 'Lilita One', cursive;
-    font-size: 18px;
-
-    padding: 12px 25px;
-    border: 2px solid #000000;
-    border-radius: 30px;
-
-    background: #FFD700;
-    color: #000000;
-
-    cursor: pointer;
-    box-shadow: 3px 4px 0 #000000;
-
-    transition: transform 0.3s ease;
-}
-
-button:hover {
-    transform: translateY(-3px);
-}
-
-/* ===== IMAGES ===== */
-
-img {
-    max-width: 100%;
-    height: auto;
-
-    border: 3px solid #FF9800;
-    border-radius: 18px;
-
-    box-shadow: 0 0 15px rgba(255, 152, 0, 0.45);
-}
-
-/* ===== CURSOR HEARTS ===== */
-
-.cursor-heart {
-    position: fixed;
-    z-index: 9999;
-    pointer-events: none;
-
-    font-size: 20px;
-    color: #FF5252;
-
-    animation: heartFloat 1s ease-out forwards;
-}
-
-@keyframes heartFloat {
-    0% {
-        opacity: 1;
-        transform: translateY(0) scale(0.7);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-55px) scale(1.4) rotate(20deg);
-    }
-}
-
-/* ===== SCROLLBAR ===== */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1B100B;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #E87513;
-    border-radius: 10px;
+        0 0 20px rgba(255, 183, 77, 0.4);
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
 
-@media (max-width: 600px) {
-    body {
-        padding: 25px 18px;
-        background-attachment: scroll;
+@media (max-width: 700px) {
+    .birthday-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    h1 {
-        font-size: clamp(45px, 12vw, 65px);
-        line-height: 1;
-        -webkit-text-stroke: 1.5px #000000;
+    .birthday-content {
+        width: 100%;
     }
 
-    .birthday-yellow {
-        -webkit-text-stroke: 1.5px #000000;
+    .birthday-video {
+        max-width: 420px;
+        margin: 0 auto;
     }
 
-    .name-box {
-        padding: 8px 22px;
-        border-radius: 15px;
-    }
-
-    .name-box span {
-        font-size: 25px;
-    }
-
-    .friend-name {
-        font-size: 30px;
-    }
-
-    #birthdayText {
-        font-size: 25px;
-        line-height: 1.7;
-    }
-
-    .together-heading {
-        font-size: 26px;
+    .birthday-video video {
+        max-height: 70vh;
     }
 }
-```
