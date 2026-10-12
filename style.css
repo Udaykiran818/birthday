@@ -1,5 +1,5 @@
 
-/* ===== NARUTO THEME ===== */
+/* ===== NARUTO BIRTHDAY THEME ===== */
 
 * {
     box-sizing: border-box;
@@ -11,19 +11,19 @@ html {
 
 body {
     margin: 0;
-    padding: 35px 20px;
+    padding: 35px 5%;
     min-height: 100vh;
     overflow-x: hidden;
 
-    text-align: center;
-    color: #FFF8E7;
     font-family: Georgia, serif;
+    color: #FFFFFF;
+    text-align: center;
 
-    /* FULL PAGE NARUTO BACKGROUND */
+    /* Full-page Naruto background */
     background-image:
         linear-gradient(
-            rgba(20, 10, 5, 0.40),
-            rgba(20, 10, 5, 0.65)
+            rgba(15, 10, 10, 0.48),
+            rgba(15, 10, 10, 0.58)
         ),
         url("nartuobackground.jpg");
 
@@ -32,14 +32,15 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
+    /* Opening animation */
     animation: pageEnter 1.3s ease-out;
 }
 
-/* Website opening animation */
+/* Website opening */
 @keyframes pageEnter {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(20px);
     }
 
     to {
@@ -48,16 +49,24 @@ body {
     }
 }
 
-/* Naruto-style main heading */
+/* ===== HAPPY BIRTHDAY HEADING ===== */
+
 h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(36px, 6vw, 65px);
-    font-weight: bold;
-    color: #FFB300;
+    font-family: 'Lilita One', cursive;
+    font-size: clamp(55px, 10vw, 100px);
+    font-weight: 400;
+    line-height: 0.95;
+
+    color: #FF7185;
+    text-align: left;
+
+    margin: 20px 0 30px 0;
+
+    -webkit-text-stroke: 2px #292929;
 
     text-shadow:
-        0 0 5px #FF8F00,
-        0 0 15px rgba(255, 111, 0, 0.8);
+        3px 4px 0 #292929,
+        5px 6px 0 #292929;
 
     animation: headingEnter 1.5s ease-out;
 }
@@ -66,7 +75,7 @@ h1 {
     from {
         opacity: 0;
         transform: scale(0.8);
-        letter-spacing: 10px;
+        letter-spacing: 8px;
     }
 
     to {
@@ -76,58 +85,25 @@ h1 {
     }
 }
 
-/* Friend name */
+/* ===== FRIEND NAME ===== */
+
 .friend-name {
-    font-size: 35px;
-    color: #FFE0B2;
-    text-shadow: 0 0 8px #FF6D00;
+    font-family: 'Lilita One', cursive;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 400;
+    color: #FFB74D;
+
+    text-shadow:
+        0 0 5px #FF6D00,
+        2px 3px 0 #292929;
+
+    animation: nameEnter 1.8s ease;
 }
 
-/* Birthday message */
-#birthdayText {
-    font-size: 20px;
-    line-height: 1.9;
-    color: #FFF3E0;
-    min-height: 75px;
-    text-shadow: 0 0 4px rgba(255, 183, 77, 0.6);
-}
-
-/* Naruto hero section */
-.naruto-bg {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    min-height: 420px;
-    margin: 25px auto;
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    border: 2px solid #FF9800;
-    border-radius: 24px;
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            rgba(30, 15, 8, 0.35),
-            rgba(30, 15, 8, 0.75)
-        ),
-        url("nartuobackground.jpg") center / cover no-repeat;
-
-    box-shadow:
-        0 0 18px rgba(255, 152, 0, 0.45),
-        inset 0 0 25px rgba(0, 0, 0, 0.4);
-
-    animation: heroEnter 1.8s ease;
-}
-
-@keyframes heroEnter {
+@keyframes nameEnter {
     from {
         opacity: 0;
-        transform: translateY(35px);
+        transform: translateY(15px);
     }
 
     to {
@@ -136,27 +112,44 @@ h1 {
     }
 }
 
-.naruto-bg h1 {
-    color: #FFFFFF;
-    text-shadow:
-        0 0 8px #FF6D00,
-        0 0 22px #FF9800;
+/* ===== BIRTHDAY MESSAGE ===== */
+
+#birthdayText {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 1.9;
+
+    color: #FFF8E7;
+    text-shadow: 0 0 5px rgba(255, 183, 77, 0.7);
+
+    min-height: 75px;
+    overflow-wrap: anywhere;
 }
 
-/* Us Together link */
+/* ===== US TOGETHER LINK ===== */
+
 .together-link {
     display: inline-block;
     margin-top: 25px;
-    color: #FFB74D;
+
     text-decoration: none;
+    color: #FFB74D;
 }
 
 .together-heading {
+    font-family: 'Lilita One', cursive;
     font-size: 30px;
+    font-weight: 400;
+
     color: #FFB74D;
-    text-shadow: 0 0 8px #FF6D00;
-    transition: transform 0.3s ease,
-                color 0.3s ease;
+
+    text-shadow:
+        2px 3px 0 #292929,
+        0 0 8px #FF6D00;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
 .together-heading:hover {
@@ -165,51 +158,63 @@ h1 {
 }
 
 .click-text {
-    color: #FFE0B2;
+    color: #FFFFFF;
     font-size: 18px;
+    text-shadow: 0 0 5px #FF9800;
 }
 
-/* Naruto-inspired buttons */
-button {
-    background: linear-gradient(135deg, #FF9800, #E65100);
-    color: white;
-    border: 2px solid #FFCC80;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
+/* ===== BUTTONS ===== */
 
-    box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+button {
+    font-family: 'Lilita One', cursive;
+    font-size: 18px;
+
+    padding: 12px 25px;
+    border: 2px solid #292929;
+    border-radius: 30px;
+
+    background: #FF7185;
+    color: #292929;
+
+    cursor: pointer;
+    box-shadow: 3px 4px 0 #292929;
+
     transition: transform 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.06);
+    transform: translateY(-3px);
 }
 
-/* Images across the website */
+/* ===== IMAGES ===== */
+
 img {
     max-width: 100%;
     height: auto;
-    border: 2px solid #FF9800;
+
+    border: 3px solid #FF9800;
     border-radius: 18px;
-    box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.45);
 }
 
-/* Cursor hearts */
+/* ===== CURSOR HEARTS ===== */
+
 .cursor-heart {
     position: fixed;
     z-index: 9999;
     pointer-events: none;
-    color: #FF5252;
+
     font-size: 20px;
+    color: #FF5252;
+
     animation: heartFloat 1s ease-out forwards;
 }
 
 @keyframes heartFloat {
     0% {
         opacity: 1;
-        transform: translateY(0) scale(0.7) rotate(0deg);
+        transform: translateY(0) scale(0.7);
     }
 
     100% {
@@ -218,7 +223,8 @@ img {
     }
 }
 
-/* Scrollbar */
+/* ===== SCROLLBAR ===== */
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -232,27 +238,29 @@ img {
     border-radius: 10px;
 }
 
-/* Mobile responsive */
+/* ===== MOBILE RESPONSIVE ===== */
+
 @media (max-width: 600px) {
     body {
-        padding: 22px 14px;
+        padding: 25px 18px;
         background-attachment: scroll;
     }
 
+    h1 {
+        font-size: clamp(45px, 12vw, 65px);
+        line-height: 1;
+        -webkit-text-stroke: 1.5px #292929;
+    }
+
     .friend-name {
-        font-size: 29px;
+        font-size: 30px;
     }
 
     #birthdayText {
         font-size: 17px;
     }
 
-    .naruto-bg {
-        min-height: 300px;
-        padding: 15px;
-    }
-
     .together-heading {
-        font-size: 25px;
+        font-size: 26px;
     }
 }
