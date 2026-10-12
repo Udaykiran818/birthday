@@ -1,1 +1,110 @@
 
+/* Main Page */
+body {
+    background-color: #000000;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    animation: pageOpen 1.5s ease;
+}
+
+/* Page Opening Animation */
+@keyframes pageOpen {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Birthday Heading */
+h1 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 58px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    text-shadow: 0 0 3px #FFFFFF, 0 0 8px #FFFFFF;
+    animation: fadeIn 2s ease;
+}
+
+/* Friend Name */
+h2 {
+    font-family: Georgia, serif;
+    color: #FFFFFF;
+    text-shadow: 0 0 2px #FFFFFF, 0 0 5px #FFFFFF;
+    animation: fadeIn 2s ease;
+}
+
+/* Birthday Message */
+#birthdayText {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #FFFFFF;
+    text-shadow: 0 0 2px #FFFFFF, 0 0 3px #FFFFFF;
+    min-height: 75px;
+}
+
+/* Smooth Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Us Together Link */
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a h2 {
+    font-size: 30px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: transform 0.4s ease,
+                text-shadow 0.4s ease;
+}
+
+/* Hover Effect */
+a h2:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 5px #FFFFFF,
+                 0 0 14px #FFFFFF;
+}
+
+a p {
+    font-size: 18px;
+    color: #FFFFFF;
+    text-shadow: 0 0 2px #FFFFFF, 0 0 3px #FFFFFF;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    #birthdayText {
+        font-size: 17px;
+    }
+}
+
