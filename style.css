@@ -19,18 +19,18 @@ body {
     color: #FFF8E7;
     font-family: Georgia, serif;
 
-    background:
-        radial-gradient(
-            circle at top,
-            rgba(255, 183, 77, 0.3),
-            transparent 45%
-        ),
+    /* FULL PAGE NARUTO BACKGROUND */
+    background-image:
         linear-gradient(
-            145deg,
-            #17100D,
-            #48200D 48%,
-            #9B420D
-        );
+            rgba(20, 10, 5, 0.40),
+            rgba(20, 10, 5, 0.65)
+        ),
+        url("nartuobackground.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     animation: pageEnter 1.3s ease-out;
 }
@@ -115,7 +115,7 @@ h1 {
             rgba(30, 15, 8, 0.35),
             rgba(30, 15, 8, 0.75)
         ),
-        url("naruto.jpg") center / cover no-repeat;
+        url("nartuobackground.jpg") center / cover no-repeat;
 
     box-shadow:
         0 0 18px rgba(255, 152, 0, 0.45),
@@ -236,6 +236,7 @@ img {
 @media (max-width: 600px) {
     body {
         padding: 22px 14px;
+        background-attachment: scroll;
     }
 
     .friend-name {
