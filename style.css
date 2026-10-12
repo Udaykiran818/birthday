@@ -1,110 +1,257 @@
 
-/* Main Page */
-body {
-    background-color: #000000;
-    text-align: center;
-    color: #FFFFFF;
-    margin: 0;
-    padding: 40px;
-    min-height: 100vh;
+/* ===== NARUTO THEME ===== */
+
+* {
     box-sizing: border-box;
-    animation: pageOpen 1.5s ease;
 }
 
-/* Page Opening Animation */
-@keyframes pageOpen {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 35px 20px;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    text-align: center;
+    color: #FFF8E7;
+    font-family: Georgia, serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255, 183, 77, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #17100D,
+            #48200D 48%,
+            #9B420D
+        );
+
+    animation: pageEnter 1.3s ease-out;
+}
+
+/* Website opening animation */
+@keyframes pageEnter {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(25px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Birthday Heading */
+/* Naruto-style main heading */
 h1 {
     font-family: Georgia, serif;
+    font-size: clamp(36px, 6vw, 65px);
     font-weight: bold;
-    font-size: 58px;
-    color: #FFFFFF;
-    margin-top: 30px;
-    text-shadow: 0 0 3px #FFFFFF, 0 0 8px #FFFFFF;
-    animation: fadeIn 2s ease;
+    color: #FFB300;
+
+    text-shadow:
+        0 0 5px #FF8F00,
+        0 0 15px rgba(255, 111, 0, 0.8);
+
+    animation: headingEnter 1.5s ease-out;
 }
 
-/* Friend Name */
-h2 {
-    font-family: Georgia, serif;
-    color: #FFFFFF;
-    text-shadow: 0 0 2px #FFFFFF, 0 0 5px #FFFFFF;
-    animation: fadeIn 2s ease;
-}
-
-/* Birthday Message */
-#birthdayText {
-    font-family: Georgia, serif;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #FFFFFF;
-    text-shadow: 0 0 2px #FFFFFF, 0 0 3px #FFFFFF;
-    min-height: 75px;
-}
-
-/* Smooth Fade In */
-@keyframes fadeIn {
+@keyframes headingEnter {
     from {
         opacity: 0;
+        transform: scale(0.8);
+        letter-spacing: 10px;
     }
+
     to {
         opacity: 1;
+        transform: scale(1);
+        letter-spacing: normal;
     }
 }
 
-/* Us Together Link */
-a {
+/* Friend name */
+.friend-name {
+    font-size: 35px;
+    color: #FFE0B2;
+    text-shadow: 0 0 8px #FF6D00;
+}
+
+/* Birthday message */
+#birthdayText {
+    font-size: 20px;
+    line-height: 1.9;
+    color: #FFF3E0;
+    min-height: 75px;
+    text-shadow: 0 0 4px rgba(255, 183, 77, 0.6);
+}
+
+/* Naruto hero section */
+.naruto-bg {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 420px;
+    margin: 25px auto;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #FF9800;
+    border-radius: 24px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(30, 15, 8, 0.35),
+            rgba(30, 15, 8, 0.75)
+        ),
+        url("naruto.jpg") center / cover no-repeat;
+
+    box-shadow:
+        0 0 18px rgba(255, 152, 0, 0.45),
+        inset 0 0 25px rgba(0, 0, 0, 0.4);
+
+    animation: heroEnter 1.8s ease;
+}
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.naruto-bg h1 {
+    color: #FFFFFF;
+    text-shadow:
+        0 0 8px #FF6D00,
+        0 0 22px #FF9800;
+}
+
+/* Us Together link */
+.together-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #FFB74D;
     text-decoration: none;
-    color: #FFFFFF;
 }
 
-a h2 {
+.together-heading {
     font-size: 30px;
-    margin-top: 60px;
-    cursor: pointer;
-    transition: transform 0.4s ease,
-                text-shadow 0.4s ease;
+    color: #FFB74D;
+    text-shadow: 0 0 8px #FF6D00;
+    transition: transform 0.3s ease,
+                color 0.3s ease;
 }
 
-/* Hover Effect */
-a h2:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 5px #FFFFFF,
-                 0 0 14px #FFFFFF;
-}
-
-a p {
-    font-size: 18px;
+.together-heading:hover {
     color: #FFFFFF;
-    text-shadow: 0 0 2px #FFFFFF, 0 0 3px #FFFFFF;
+    transform: scale(1.06);
 }
 
-/* Mobile Responsive */
+.click-text {
+    color: #FFE0B2;
+    font-size: 18px;
+}
+
+/* Naruto-inspired buttons */
+button {
+    background: linear-gradient(135deg, #FF9800, #E65100);
+    color: white;
+    border: 2px solid #FFCC80;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+
+    box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+/* Images across the website */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #FF9800;
+    border-radius: 18px;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Cursor hearts */
+.cursor-heart {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    color: #FF5252;
+    font-size: 20px;
+    animation: heartFloat 1s ease-out forwards;
+}
+
+@keyframes heartFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.7) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-55px) scale(1.4) rotate(20deg);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1B100B;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E87513;
+    border-radius: 10px;
+}
+
+/* Mobile responsive */
 @media (max-width: 600px) {
     body {
-        padding: 20px;
+        padding: 22px 14px;
     }
 
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 27px;
+    .friend-name {
+        font-size: 29px;
     }
 
     #birthdayText {
         font-size: 17px;
     }
-}
 
+    .naruto-bg {
+        min-height: 300px;
+        padding: 15px;
+    }
+
+    .together-heading {
+        font-size: 25px;
+    }
+}
