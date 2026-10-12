@@ -57,7 +57,7 @@ h1 {
     line-height: 0.95;
     text-align: left;
 
-    margin: 20px 0 30px 0;
+    margin: 20px 0 20px 0;
 
     color: #FFFFFF;
     -webkit-text-stroke: 2px #000000;
@@ -69,7 +69,7 @@ h1 {
     animation: headingEnter 1.5s ease-out;
 }
 
-/* BIRTHDAY YELLOW COLOUR */
+/* ===== BIRTHDAY YELLOW COLOUR ===== */
 
 .birthday-yellow {
     color: #FFD700;
@@ -94,6 +94,39 @@ h1 {
         transform: scale(1);
         letter-spacing: normal;
     }
+}
+
+/* ===== SUDHEER ROUNDED NAME BOX ===== */
+
+.name-box {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 10px 30px;
+
+    background: rgba(0, 0, 0, 0.80);
+    border: 3px solid #FFD700;
+    border-radius: 18px;
+
+    box-shadow:
+        3px 4px 0 #000000,
+        0 0 10px rgba(255, 215, 0, 0.35);
+
+    animation: nameEnter 1.8s ease;
+}
+
+.name-box span {
+    display: inline-block;
+
+    font-family: 'Lilita One', cursive;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 400;
+    letter-spacing: 3px;
+
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #000000;
+
+    text-shadow: 2px 3px 0 #000000;
 }
 
 /* ===== FRIEND NAME ===== */
@@ -267,6 +300,15 @@ img {
 
     .birthday-yellow {
         -webkit-text-stroke: 1.5px #000000;
+    }
+
+    .name-box {
+        padding: 8px 24px;
+        border-radius: 16px;
+    }
+
+    .name-box span {
+        font-size: 27px;
     }
 
     .friend-name {
