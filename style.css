@@ -96,15 +96,19 @@ h1 {
     }
 }
 
-/* ===== SUDHEER ROUNDED NAME BOX ===== */
+/* ===== SUDHEER NAME BOX - LEFT SIDE ===== */
 
 .name-box {
-    display: inline-block;
+    display: table;
+
     margin-top: 5px;
     margin-bottom: 20px;
-    padding: 10px 30px;
+    margin-left: 0;
+    margin-right: auto;
 
-    background: rgba(0, 0, 0, 0.80);
+    padding: 9px 26px;
+
+    background: #FFF2B2;
     border: 3px solid #FFD700;
     border-radius: 18px;
 
@@ -118,15 +122,14 @@ h1 {
 .name-box span {
     display: inline-block;
 
-    font-family: 'Lilita One', cursive;
-    font-size: clamp(24px, 5vw, 36px);
-    font-weight: 400;
-    letter-spacing: 3px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: clamp(23px, 4vw, 32px);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 2px;
 
-    color: #FFFFFF;
-    -webkit-text-stroke: 1px #000000;
-
-    text-shadow: 2px 3px 0 #000000;
+    color: #222222;
+    text-shadow: none;
 }
 
 /* ===== FRIEND NAME ===== */
@@ -303,12 +306,12 @@ img {
     }
 
     .name-box {
-        padding: 8px 24px;
-        border-radius: 16px;
+        padding: 8px 22px;
+        border-radius: 15px;
     }
 
     .name-box span {
-        font-size: 27px;
+        font-size: 25px;
     }
 
     .friend-name {
