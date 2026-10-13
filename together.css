@@ -1,8 +1,14 @@
 
+/* General Page */
+body {
+    background: #000000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
 
-/* Stylish Us Together Font */
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-
+/* Stylish Heading */
 h1 {
     font-family: 'Lilita One', cursive;
     font-size: clamp(32px, 6vw, 48px);
@@ -11,4 +17,164 @@ h1 {
     letter-spacing: 2px;
     text-shadow: none;
     animation: titleEnter 1s ease-out both;
+}
+
+/* Subtitle */
+p {
+    color: #FFF2B2;
+    animation: titleEnter 1s ease-out 0.2s both;
+}
+
+/* Photo Boxes */
+.photo-card {
+    position: relative;
+    width: 300px;
+    max-width: 90%;
+    height: 220px;
+    margin: 30px auto;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #FFF2B2;
+
+    opacity: 0;
+    animation: boxEnter 0.9s ease-out forwards;
+}
+
+/* One-by-one Entrance */
+.photo-card:nth-of-type(1) {
+    animation-delay: 0.3s;
+}
+
+.photo-card:nth-of-type(2) {
+    animation-delay: 0.6s;
+}
+
+.photo-card:nth-of-type(3) {
+    animation-delay: 0.9s;
+}
+
+.photo-card:nth-of-type(4) {
+    animation-delay: 1.2s;
+}
+
+/* Photos */
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Yellow Gift Cover */
+.photo-cover {
+    position: absolute;
+    inset: 0;
+    background: #FFF2B2;
+    color: #222222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    z-index: 2;
+    transition: opacity 0.4s ease 0.35s;
+}
+
+.photo-cover span {
+    font-size: 45px;
+    margin-bottom: 8px;
+}
+
+/* Gift Box Cap */
+.gift-lid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48%;
+    background: #FFD700;
+    border-bottom: 5px solid #B8860B;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    z-index: 3;
+
+    transition: transform 0.8s ease-in,
+                opacity 0.5s ease;
+}
+
+/* Cap Falls Down on Click */
+.photo-card.opened .gift-lid {
+    transform: translateY(250px) rotate(12deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Cover Disappears */
+.photo-card.opened .photo-cover {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Box Entrance Animation */
+@keyframes boxEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-7px) scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Heading Entrance */
+@keyframes titleEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Golden Hover Effect */
+.photo-card:hover {
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.45);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .photo-card {
+        height: 220px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .photo-card,
+    h1,
+    p {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 }
