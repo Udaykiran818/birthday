@@ -32,8 +32,11 @@
         <span>23 October 2006</span>
     </div>
 
-    <!-- Friend Name -->
-    <h2 class="friend-name">Sudheeruuu</h2>
+    <!-- Friend Name - Yellow -->
+    <h2 class="friend-name"
+        style="color: #FFD700;">
+        Sudheeruuu
+    </h2>
 
     <!-- Birthday Message -->
     <p id="birthdayText"></p>
@@ -70,22 +73,31 @@
         typeText();
     </script>
 
-    <!-- Us Together -->
-    <a href="together.html" class="together-link">
-        <h2 class="together-heading">Us Together 🫂</h2>
+    <!-- Us Together Box -->
+    <a href="together.html"
+       class="together-link"
+       style="
+           display: inline-block;
+           margin-top: 25px;
+           padding: 12px 30px;
+           border: 2px solid #FFD700;
+           border-radius: 18px;
+           background: rgba(0, 0, 0, 0.35);
+           box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
+           text-decoration: none;
+       ">
 
-        <p class="click-text">
-            <br>
-            <small>Click here 🙈</small>
-        </p>
+        <h2 class="together-heading"
+            style="margin: 5px 0; color: #FFD700;">
+            Us Together 🫂
+        </h2>
+
     </a>
 
-    <!-- CURSOR HEART ANIMATION -->
+    <!-- Cursor Hearts -->
     <script>
-        document.addEventListener("mousemove", function (e) {
-
+        function createHeart(x, y) {
             const heart = document.createElement("span");
-
             heart.className = "cursor-heart";
 
             const symbols = ["❤️", "💕", "💖", "💗", "✨"];
@@ -93,39 +105,23 @@
             heart.textContent =
                 symbols[Math.floor(Math.random() * symbols.length)];
 
-            heart.style.left = e.clientX + "px";
-            heart.style.top = e.clientY + "px";
+            heart.style.left = x + "px";
+            heart.style.top = y + "px";
 
             document.body.appendChild(heart);
 
             setTimeout(function () {
                 heart.remove();
             }, 1000);
+        }
 
+        document.addEventListener("mousemove", function (e) {
+            createHeart(e.clientX, e.clientY);
         });
 
-        // Phone touch support
         document.addEventListener("touchmove", function (e) {
-
             const touch = e.touches[0];
-            const heart = document.createElement("span");
-
-            heart.className = "cursor-heart";
-
-            const symbols = ["❤️", "💕", "💖", "💗", "✨"];
-
-            heart.textContent =
-                symbols[Math.floor(Math.random() * symbols.length)];
-
-            heart.style.left = touch.clientX + "px";
-            heart.style.top = touch.clientY + "px";
-
-            document.body.appendChild(heart);
-
-            setTimeout(function () {
-                heart.remove();
-            }, 1000);
-
+            createHeart(touch.clientX, touch.clientY);
         }, { passive: true });
     </script>
 
