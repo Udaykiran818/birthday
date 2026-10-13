@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +17,46 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
           rel="stylesheet">
+
+    <!-- Remove Font Glow -->
+    <style>
+        h1,
+        .birthday-yellow,
+        .friend-name,
+        #birthdayText,
+        .together-heading {
+            text-shadow: none !important;
+        }
+
+        .friend-name {
+            color: #FFD700 !important;
+            -webkit-text-stroke: 0 !important;
+        }
+
+        .together-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 14px;
+            background: #FFF2B2;
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            box-shadow: none;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .together-link:hover {
+            transform: scale(1.04);
+        }
+
+        .together-heading {
+            margin: 2px 0;
+            padding: 0;
+            font-size: 22px;
+            color: #222222 !important;
+            -webkit-text-stroke: 0 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,9 +72,8 @@
         <span>23 October 2006</span>
     </div>
 
-    <!-- Friend Name - Yellow -->
-    <h2 class="friend-name"
-        style="color: #FFD700;">
+    <!-- Friend Name -->
+    <h2 class="friend-name" style="color: #FFD700;">
         Sudheeruuu
     </h2>
 
@@ -73,25 +112,11 @@
         typeText();
     </script>
 
-    <!-- Us Together Box -->
-    <a href="together.html"
-       class="together-link"
-       style="
-           display: inline-block;
-           margin-top: 25px;
-           padding: 12px 30px;
-           border: 2px solid #FFD700;
-           border-radius: 18px;
-           background: rgba(0, 0, 0, 0.35);
-           box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
-           text-decoration: none;
-       ">
-
-        <h2 class="together-heading"
-            style="margin: 5px 0; color: #FFD700;">
+    <!-- Us Together Small Yellow Box -->
+    <a href="together.html" class="together-link">
+        <h2 class="together-heading">
             Us Together 🫂
         </h2>
-
     </a>
 
     <!-- Cursor Hearts -->
@@ -127,4 +152,3 @@
 
 </body>
 </html>
-```
