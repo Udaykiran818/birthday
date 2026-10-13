@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     <!-- CSS File Link -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts: Cartoon Style -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -26,7 +27,7 @@
         <span class="birthday-yellow">BIRTHDAY</span> ❤️
     </h1>
 
-    <!-- Rounded Sudheer Name Box -->
+    <!-- Birthday Date -->
     <div class="name-box">
         <span>23 October 2006</span>
     </div>
@@ -71,15 +72,63 @@
 
     <!-- Us Together -->
     <a href="together.html" class="together-link">
-
         <h2 class="together-heading">Us Together 🫂</h2>
 
         <p class="click-text">
             <br>
             <small>Click here 🙈</small>
         </p>
-
     </a>
+
+    <!-- CURSOR HEART ANIMATION -->
+    <script>
+        document.addEventListener("mousemove", function (e) {
+
+            const heart = document.createElement("span");
+
+            heart.className = "cursor-heart";
+
+            const symbols = ["❤️", "💕", "💖", "💗", "✨"];
+
+            heart.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            heart.style.left = e.clientX + "px";
+            heart.style.top = e.clientY + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function () {
+                heart.remove();
+            }, 1000);
+
+        });
+
+        // Phone touch support
+        document.addEventListener("touchmove", function (e) {
+
+            const touch = e.touches[0];
+            const heart = document.createElement("span");
+
+            heart.className = "cursor-heart";
+
+            const symbols = ["❤️", "💕", "💖", "💗", "✨"];
+
+            heart.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            heart.style.left = touch.clientX + "px";
+            heart.style.top = touch.clientY + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function () {
+                heart.remove();
+            }, 1000);
+
+        }, { passive: true });
+    </script>
 
 </body>
 </html>
+```
