@@ -21,8 +21,8 @@ body {
 
     background-image:
         linear-gradient(
-            rgba(15, 10, 10, 0.48),
-            rgba(15, 10, 10, 0.58)
+            rgba(15, 10, 10, 0.15),
+            rgba(15, 10, 10, 0.20)
         ),
         url("nartuobackground.jpg");
 
