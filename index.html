@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
           rel="stylesheet">
 
-    <!-- Remove Font Glow -->
+    <!-- Page Styling -->
     <style>
         h1,
         .birthday-yellow,
@@ -30,31 +29,55 @@
 
         .friend-name {
             color: #FFD700 !important;
-            -webkit-text-stroke: 0 !important;
+            -webkit-text-stroke: 2px #000000 !important;
+            paint-order: stroke fill;
         }
 
+        /* ===== US TOGETHER BUTTON AT BOTTOM ===== */
+
         .together-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 5px 14px;
+            display: table;
+            margin: 100px auto 40px;
+            padding: 10px 24px;
+
             background: #FFF2B2;
             border: 2px solid #FFD700;
-            border-radius: 12px;
-            box-shadow: none;
+            border-radius: 14px;
+
+            box-shadow: 0 4px 0 #000000;
             text-decoration: none;
-            transition: transform 0.2s ease;
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
         }
 
         .together-link:hover {
-            transform: scale(1.04);
+            transform: translateY(-4px);
+            box-shadow: 0 7px 0 #000000;
         }
 
         .together-heading {
-            margin: 2px 0;
+            margin: 0;
             padding: 0;
-            font-size: 22px;
+            font-family: 'Lilita One', cursive;
+            font-size: 24px;
+            font-weight: 400;
             color: #222222 !important;
             -webkit-text-stroke: 0 !important;
+            text-shadow: none !important;
+        }
+
+        /* Phone Responsive */
+        @media screen and (max-width: 600px) {
+            .together-link {
+                margin-top: 80px;
+                margin-bottom: 30px;
+                padding: 9px 20px;
+            }
+
+            .together-heading {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
@@ -73,14 +96,15 @@
     </div>
 
     <!-- Friend Name -->
-<h2 class="friend-name" style="
-    color: #FFD700 !important;
-    -webkit-text-stroke: 2px #000000 !important;
-    paint-order: stroke fill;
-    text-shadow: none !important;
-">
-    Sudheeruuu
-</h2>
+    <h2 class="friend-name" style="
+        color: #FFD700 !important;
+        -webkit-text-stroke: 2px #000000 !important;
+        paint-order: stroke fill;
+        text-shadow: none !important;
+    ">
+        Sudheeruuu
+    </h2>
+
     <!-- Birthday Message -->
     <p id="birthdayText"></p>
 
@@ -116,7 +140,7 @@
         typeText();
     </script>
 
-    <!-- Us Together Small Yellow Box -->
+    <!-- Us Together Button At Bottom -->
     <a href="together.html" class="together-link">
         <h2 class="together-heading">
             Us Together 🫂
