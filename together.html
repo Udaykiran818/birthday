@@ -1,119 +1,103 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Us Together 🫂</title>
+
+    <style>
+        body {
+            background: #000000;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .photo-card {
+            position: relative;
+            width: 300px;
+            max-width: 90%;
+            height: 220px;
+            margin: 25px auto;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-cover {
+            position: absolute;
+            inset: 0;
+            background: #FFF2B2;
+            color: #222222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            transition: opacity 0.5s ease;
+        }
+
+        .photo-cover span {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .photo-card.opened .photo-cover {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
-<body style="
-    background-color: #000000;
-    text-align: center;
-    color: #FFFFFF;
-    margin: 0;
-    padding: 40px;
-">
+<body>
 
-    <h1 style="
-        font-family: Georgia, serif;
-        font-size: 50px;
-        color: #FFFFFF;
-        text-shadow: 0 0 8px #FFFFFF, 0 0 15px #FFFFFF;
-    ">
-        Us Together 🫂❤️
-    </h1>
-
-    <p style="
-        font-family: Georgia, serif;
-        font-size: 20px;
-        color: #FFFFFF;
-        text-shadow: 0 0 6px #FFFFFF, 0 0 12px #FFFFFF;
-    ">
-        
-    </p>
+    <h1>Us Together 🫂❤️</h1>
+    <p>Touch the cover to see our memory 💛</p>
 
     <!-- Photo 1 -->
-    <img src="uday3 fi.jpeg"
-        style="
-        width: 300px;
-        border-radius: 20px;
-        margin: 15px;
-    ">
+    <div class="photo-card" onclick="openPhoto(this)">
+        <img src="uday.jpeg" alt="Our memory 1">
+        <div class="photo-cover">
+            <span>🎁</span>
+            Touch to Open ❤️
+        </div>
+    </div>
 
     <!-- Photo 2 -->
-    <img src="uday1.jpeg"
-        style="
-        width: 300px;
-        border-radius: 20px;
-        margin: 15px;
-    ">
+    <div class="photo-card" onclick="openPhoto(this)">
+        <img src="uday1.jpeg" alt="Our memory 2">
+        <div class="photo-cover">
+            <span>💌</span>
+            Open Our Memory 🫂
+        </div>
+    </div>
 
     <!-- Photo 3 -->
-    <img src="uday2.jpeg"
-        style="
-        width: 300px;
-        border-radius: 20px;
-        margin: 15px;
-    ">
+    <div class="photo-card" onclick="openPhoto(this)">
+        <img src="uday2.jpeg" alt="Our memory 3">
+        <div class="photo-cover">
+            <span>🎁</span>
+            Tap to Reveal 💖
+        </div>
+    </div>
 
-    <!-- Photo 4 -->
-    <img src="uday4.jpeg"
-        style="
-        width: 300px;
-        border-radius: 20px;
-        margin: 15px;
-    ">
-
-    <!-- Photo 5 -->
-    <img src="uday.jpeg"
-        style="
-        width: 300px;
-        border-radius: 20px;
-        margin: 15px;
-    ">
-
-    <br><br>
-
-    <!-- Birthday Song -->
-    <audio autoplay loop controls>
-        <source src="Makane X Koodappirannor_320(KoshalWorld.Com).mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <br><br><br>
-
-    <!-- Back Button -->
-    <a href="index.html">
-        <button style="
-            font-size: 18px;
-            padding: 12px 25px;
-            border-radius: 15px;
-            border: 2px solid #FFFFFF;
-            background-color: #000000;
-            color: #FFFFFF;
-            cursor: pointer;
-        ">
-            🏠 Back
-        </button>
-    </a>
-
-    <!-- Surprise Button -->
-    <a href="surprise.html">
-        <button style="
-            font-size: 18px;
-            padding: 12px 25px;
-            margin-left: 15px;
-            border-radius: 15px;
-            border: 2px solid #FFFFFF;
-            background-color: #000000;
-            color: #FFFFFF;
-            cursor: pointer;
-        ">
-            🎁 Surprise
-        </button>
-    </a>
+    <script>
+        function openPhoto(card) {
+            card.classList.add("opened");
+        }
+    </script>
 
 </body>
-
 </html>
+```
