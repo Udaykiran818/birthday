@@ -1,9 +1,11 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Us Together 🫂</title>
 
     <style>
@@ -15,18 +17,30 @@
             padding: 20px;
         }
 
+        h1 {
+            color: #FFD700;
+            text-shadow: none;
+        }
+
+        p {
+            color: #FFF2B2;
+        }
+
+        /* Photo Box */
         .photo-card {
             position: relative;
             width: 300px;
             max-width: 90%;
             height: 220px;
-            margin: 25px auto;
+            margin: 30px auto;
             border: 2px solid #FFD700;
             border-radius: 15px;
             overflow: hidden;
             cursor: pointer;
+            background: #FFF2B2;
         }
 
+        /* Photo */
         .photo-card img {
             width: 100%;
             height: 100%;
@@ -34,6 +48,7 @@
             display: block;
         }
 
+        /* Main Cover */
         .photo-cover {
             position: absolute;
             inset: 0;
@@ -45,16 +60,44 @@
             justify-content: center;
             font-size: 22px;
             font-weight: bold;
-            transition: opacity 0.5s ease;
+            z-index: 2;
         }
 
         .photo-cover span {
-            font-size: 38px;
+            font-size: 45px;
             margin-bottom: 8px;
         }
 
+        /* Gift Box Cap */
+        .gift-lid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48%;
+            background: #FFD700;
+            border-bottom: 5px solid #B8860B;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            z-index: 3;
+            transition: transform 0.8s ease-in,
+                        opacity 0.5s ease;
+        }
+
+        /* Cap falls down when touched */
+        .photo-card.opened .gift-lid {
+            transform: translateY(250px) rotate(12deg);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Cover disappears after cap falls */
         .photo-card.opened .photo-cover {
             opacity: 0;
+            transition: opacity 0.4s ease 0.35s;
             pointer-events: none;
         }
     </style>
@@ -63,44 +106,54 @@
 <body>
 
     <h1>Us Together 🫂❤️</h1>
-    <p>Touch the cover to see our memory 💛</p>
+    <p>Open the gift to see our memories 💛</p>
 
     <!-- Photo 1 -->
     <div class="photo-card" onclick="openPhoto(this)">
         <img src="uday4.jpeg" alt="Our memory 1">
+
         <div class="photo-cover">
-            <span>💌</span>
-            Tap to Reveal 💖
+            <span>🎁</span>
+            Our Memory ❤️
         </div>
+
+        <div class="gift-lid">🎀</div>
     </div>
 
     <!-- Photo 2 -->
     <div class="photo-card" onclick="openPhoto(this)">
         <img src="uday3 fi.jpeg" alt="Our memory 2">
+
         <div class="photo-cover">
-            <span>💌</span>
-            Tap to Reveal 💖
+            <span>🎁</span>
+            Our Memory 💖
         </div>
+
+        <div class="gift-lid">🎀</div>
     </div>
 
     <!-- Photo 3 -->
     <div class="photo-card" onclick="openPhoto(this)">
         <img src="uday1.jpeg" alt="Our memory 3">
+
         <div class="photo-cover">
-            <span>💌</span>
-            Tap to Reveal 💖
+            <span>🎁</span>
+            Our Memory 🫂
         </div>
+
+        <div class="gift-lid">🎀</div>
     </div>
 
-
-
-        <!--photo 5 -->
+    <!-- Photo 4 -->
     <div class="photo-card" onclick="openPhoto(this)">
-        <img src="uday.jpeg" alt="Our memory 3">
+        <img src="uday.jpeg" alt="Our memory 4">
+
         <div class="photo-cover">
-            <span>💌</span>
-            Tap to Reveal 💖
+            <span>🎁</span>
+            Our Memory ❤️
         </div>
+
+        <div class="gift-lid">🎀</div>
     </div>
 
     <script>
@@ -111,3 +164,4 @@
 
 </body>
 </html>
+```
