@@ -49,30 +49,44 @@
     </a>
 
     <!-- Balloon Animation -->
-    <script>
-        function createBalloon() {
-            const balloon = document.createElement("div");
-            const balloons = ["🎈", "🎈", "🎈", "💖"];
+ <script>
+/* BALLOONS - LAPTOP + MOBILE */
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    font-size: 40px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: balloonUp 6s linear forwards;
+    will-change: transform, opacity;
+}
 
-            balloon.className = "balloon";
-            balloon.textContent =
-                balloons[Math.floor(Math.random() * balloons.length)];
+/* BALLOON MOVEMENT */
+@keyframes balloonUp {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 0;
+    }
 
-            balloon.style.left = Math.random() * 95 + "vw";
-            balloon.style.animationDuration =
-                (5 + Math.random() * 5) + "s";
+    10% {
+        opacity: 1;
+    }
 
-            document.body.appendChild(balloon);
+    100% {
+        transform: translate3d(0, -120vh, 0) rotate(25deg);
+        opacity: 0;
+    }
+}
 
-            setTimeout(() => balloon.remove(), 10000);
-        }
-
-        for (let i = 0; i < 12; i++) {
-            setTimeout(createBalloon, i * 350);
-        }
-
-        setInterval(createBalloon, 900);
-    </script>
-
-</body>
+/* MOBILE SUPPORT */
+@media screen and (max-width: 768px) {
+    .balloon {
+        position: fixed;
+        font-size: 32px;
+        z-index: 9999;
+        animation: balloonUp 6s linear forwards;
+    }
+}
+</script>
+`</body>
 </html>
