@@ -1,4 +1,4 @@
-
+```css
 /* COMMON SETTINGS */
 * {
     box-sizing: border-box;
@@ -25,6 +25,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    /* ONLY ZOOM-IN ANIMATION */
+    animation: zoomIn 1.3s ease-out both;
+}
+
+/* ZOOM-IN KEYFRAMES */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.75);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
 /* CARTOON HEADING - NO GLOW */
@@ -78,76 +92,4 @@ h1 {
     margin: 25px 0;
     border-radius: 15px;
     border: 2px solid #FFFFFF;
-    background-color: #000000;
-    color: #FFFFFF;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.back-button:hover {
-    background-color: #FFFFFF;
-    color: #000000;
-    transform: scale(1.05);
-}
-
-/* BALLOONS */
-.balloon {
-    position: fixed;
-    bottom: -100px;
-    font-size: 40px;
-    z-index: 9998;
-    pointer-events: none;
-    animation: balloonUp linear forwards;
-}
-
-@keyframes balloonUp {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-120vh) rotate(20deg);
-        opacity: 0;
-    }
-}
-
-/* PHONE BACKGROUND */
-@media screen and (max-width: 768px) {
-    body {
-        padding: 30px 15px;
-
-        background-image:
-            linear-gradient(
-                rgba(0, 0, 0, 0.15),
-                rgba(0, 0, 0, 0.15)
-            ),
-            url("lastgiftphone.jpg");
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-    }
-
-    .main-message {
-        margin-top: 50px;
-    }
-
-    .extra-message {
-        font-size: 18px;
-    }
-
-    .photos img {
-        margin: 20px auto;
-    }
-
-    .back-button {
-        font-size: 15px;
-    }
-}
+    background-color:
