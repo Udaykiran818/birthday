@@ -11,14 +11,47 @@
 <body>
     <h1>🎁 Surprise</h1>
 
-    <p>niku surprise kavala puka 😂❤️</p>
+    <p>Niku Surprise Kavala Puka 😂❤️</p>
 
    
         <a href="lastgift.html" class="gift-button">
             Open Real Gift 💝
         </a>
     </div>
+```html
+<script>
+    const emojis = ["🖕"];
 
+    document.addEventListener("mousemove", function(event) {
+        const emoji = document.createElement("span");
+
+        emoji.innerHTML = emojis[
+            Math.floor(Math.random() * emojis.length)
+        ];
+
+        emoji.style.position = "fixed";
+        emoji.style.left = event.clientX + "px";
+        emoji.style.top = event.clientY + "px";
+        emoji.style.fontSize = "22px";
+        emoji.style.pointerEvents = "none";
+        emoji.style.zIndex = "9999";
+        emoji.style.transform = "translate(-50%, -50%)";
+        emoji.style.transition = "opacity 0.8s, transform 0.8s";
+
+        document.body.appendChild(emoji);
+
+        requestAnimationFrame(() => {
+            emoji.style.opacity = "0";
+            emoji.style.transform =
+                "translate(-50%, -40px) scale(1.5)";
+        });
+
+        setTimeout(() => {
+            emoji.remove();
+        }, 800);
+    });
+</script>
+```
 
 </body>
 </html>
