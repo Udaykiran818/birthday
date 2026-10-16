@@ -1,4 +1,5 @@
-  /* ===== NARUTO BIRTHDAY THEME ===== */
+
+/* ===== NARUTO BIRTHDAY THEME ===== */
 
 * {
     box-sizing: border-box;
@@ -62,6 +63,7 @@ h1 {
 
     color: #FFFFFF;
     -webkit-text-stroke: 2px #000000;
+    paint-order: stroke fill;
 
     text-shadow:
         3px 4px 0 #000000,
@@ -75,6 +77,7 @@ h1 {
 .birthday-yellow {
     color: #FFD700;
     -webkit-text-stroke: 2px #000000;
+    paint-order: stroke fill;
 
     text-shadow:
         3px 4px 0 #000000,
@@ -97,7 +100,7 @@ h1 {
     }
 }
 
-/* ===== DATE NAME BOX - LEFT SIDE ===== */
+/* ===== DATE NAME BOX ===== */
 
 .name-box {
     display: table;
@@ -142,6 +145,7 @@ h1 {
     color: #FFB74D;
 
     -webkit-text-stroke: 1px #000000;
+    paint-order: stroke fill;
 
     text-shadow:
         2px 3px 0 #000000,
@@ -162,7 +166,7 @@ h1 {
     }
 }
 
-/* ===== STYLISH BIRTHDAY MESSAGE ===== */
+/* ===== BIRTHDAY MESSAGE - NEW FONT + BLACK BORDER ===== */
 
 #birthdayText {
     font-family: 'Dancing Script', cursive;
@@ -170,10 +174,16 @@ h1 {
     font-weight: 700;
     line-height: 1.8;
 
-    color: #FFF8E7;
+    color: #FFFFFF;
+
+    -webkit-text-stroke: 0.6px #000000;
+    paint-order: stroke fill;
 
     text-shadow:
-        0 0 5px rgba(255, 183, 77, 0.7);
+        1px 1px 0 #000000,
+        -1px -1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000;
 
     min-height: 75px;
     overflow-wrap: anywhere;
@@ -341,5 +351,17 @@ img {
 
     .together-heading {
         font-size: 26px;
+    }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    h1,
+    .name-box,
+    .friend-name,
+    #birthdayText,
+    p {
+        animation: none;
     }
 }
