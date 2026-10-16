@@ -1,1 +1,99 @@
 
+/* COMMON SETTINGS */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #D3D3D3;
+    text-align: center;
+    margin: 0;
+    padding: 60px 20px;
+    min-height: 100vh;
+
+    /* LAPTOP BACKGROUND */
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("./surprisepc.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* HEADING */
+h1 {
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 50px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+/* MESSAGE */
+p {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-top: 80px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+/* BUTTONS */
+.gift-button {
+    display: inline-block;
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 15px;
+    border: 2px solid #D3D3D3;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gift-button:hover {
+    background-color: #D3D3D3;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* PHONE BACKGROUND */
+@media screen and (max-width: 768px) {
+    body {
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.2)
+            ),
+            url("./surprisephone.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        padding: 40px 15px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    p {
+        font-size: 25px;
+        margin-top: 65px;
+    }
+
+    .gift-button {
+        font-size: 16px;
+        padding: 12px 20px;
+        margin: 8px;
+    }
+}
+
