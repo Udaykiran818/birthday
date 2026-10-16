@@ -96,6 +96,57 @@
             inka ikkada emi ledhu dengey
         </button>
     </a>
+    
+<style>
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    font-size: 40px;
+    z-index: 9998;
+    pointer-events: none;
+    animation: balloonUp linear forwards;
+}
+
+@keyframes balloonUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(20deg);
+        opacity: 0;
+    }
+}
+</style>
+
+<script>
+    function createBalloon() {
+        const balloon = document.createElement("div");
+        const balloons = ["🎈", "🎈", "🎈", "💖"];
+
+        balloon.className = "balloon";
+        balloon.textContent =
+            balloons[Math.floor(Math.random() * balloons.length)];
+
+        balloon.style.left = Math.random() * 95 + "vw";
+        balloon.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+        document.body.appendChild(balloon);
+
+        setTimeout(() => balloon.remove(), 10000);
+    }
+
+    // Website open avvagane balloons start
+    for (let i = 0; i < 12; i++) {
+        setTimeout(createBalloon, i * 350);
+    }
+
+    // Tarvatha kuda balloons continuous ga vasthayi
+    setInterval(createBalloon, 900);
+</script>
 
 </body>
 
