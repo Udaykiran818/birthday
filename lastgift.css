@@ -10,7 +10,21 @@ body {
     text-align: center;
     margin: 0;
     padding: 40px 20px;
+    min-height: 100vh;
     overflow-x: hidden;
+
+    /* LAPTOP BACKGROUND */
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.20),
+            rgba(0, 0, 0, 0.20)
+        ),
+        url("./suprisepc.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* CARTOON HEADING - NO GLOW */
@@ -103,10 +117,22 @@ h1 {
     }
 }
 
-/* PHONE RESPONSIVE */
+/* PHONE BACKGROUND */
 @media screen and (max-width: 768px) {
     body {
         padding: 30px 15px;
+
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15)
+            ),
+            url("./suprisephone.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
     }
 
     .main-message {
