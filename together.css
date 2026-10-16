@@ -45,11 +45,27 @@ h1 {
 
 
 
-/* Subtitle */
+
+/* Subtitle - White Stylish Font */
 p {
-    color: #FFF2B2;
+    color: #FFFFFF;
+    font-family: 'Lilita One', cursive;
+    font-size: clamp(17px, 3vw, 23px);
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    -webkit-text-stroke: 0.4px #000000;
+    paint-order: stroke fill;
+
+    text-shadow:
+        1px 1px 0 #000000,
+        -1px -1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000;
+
     animation: titleEnter 1s ease-out 0.2s both;
 }
+
 
 /* Photo Boxes */
 .photo-card {
