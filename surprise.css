@@ -1,4 +1,7 @@
 ```css
+/* CARTOON FONT */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
 /* COMMON SETTINGS */
 * {
     box-sizing: border-box;
@@ -26,9 +29,9 @@ body {
     background-attachment: fixed;
 }
 
-/* HEADING */
+/* CARTOON HEADING */
 h1 {
-    font-family: "Lucida Handwriting", cursive;
+    font-family: 'Luckiest Guy', cursive;
     font-size: 50px;
     color: #FFFFFF;
     text-shadow: 2px 2px 5px #000000;
