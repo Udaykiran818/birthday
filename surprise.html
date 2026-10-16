@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,63 +6,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise 🎁</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* LAPTOP BACKGROUND */
+        body {
+            background-color: #000000;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.3)
+                ),
+                url("surprisepc.png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: #FFFFFF;
+            text-align: center;
+            margin: 0;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-family: "Lucida Handwriting", cursive;
+            font-size: 50px;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        p {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin-top: 80px;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        .gift-button {
+            display: inline-block;
+            font-size: 18px;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 15px;
+            border: 2px solid #D3D3D3;
+            background-color: #000000;
+            color: #FFFFFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* PHONE BACKGROUND */
+        @media screen and (max-width: 768px) {
+            body {
+                background-image:
+                    linear-gradient(
+                        rgba(0, 0, 0, 0.2),
+                        rgba(0, 0, 0, 0.2)
+                    ),
+                    url("surprisephone.jpg");
+
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+
+                padding: 40px 15px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            p {
+                font-size: 25px;
+                margin-top: 65px;
+            }
+
+            .gift-button {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
 </head>
 
-<body style="
-    background-color: #000000;
-    color: #D3D3D3;
-    text-align: center;
-    margin: 0;
-    padding: 60px 20px;
-">
+<body>
 
-    <h1 style="
-        font-family: 'Lucida Handwriting', cursive;
-        font-size: 50px;
-        color: #D3D3D3;
-    ">
-        🎁 Surprise
-    </h1>
+    <h1>🎁 Surprise</h1>
 
-    <p style="
-        font-family: Georgia, serif;
-        font-size: 32px;
-        margin-top: 80px;
-    ">
-        niku surprise kavala puka 😂❤️
-    </p>
+    <p>niku surprise kavala puka 😂❤️</p>
 
     <br><br>
 
-    <!-- Back Button -->
-    <a href="index.html">
-        <button style="
-            font-size: 18px;
-            padding: 12px 25px;
-            border-radius: 15px;
-            border: 2px solid #D3D3D3;
-            background-color: #000000;
-            color: #D3D3D3;
-            cursor: pointer;
-        ">
-            🏠 Back
-        </button>
+    <a href="index.html" class="gift-button">
+        🏠 Back
     </a>
 
-    <!-- Last Gift Button -->
-    <a href="lastgift.html">
-        <button style="
-            font-size: 18px;
-            padding: 12px 25px;
-            margin-left: 15px;
-            border-radius: 15px;
-            border: 2px solid #D3D3D3;
-            background-color: #000000;
-            color: #D3D3D3;
-            cursor: pointer;
-        ">
-            🎁 real Gift
-        </button>
+    <a href="lastgift.html" class="gift-button">
+        🎁 Real Gift
     </a>
 
 </body>
