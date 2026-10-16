@@ -1,11 +1,24 @@
 
 /* General Page */
 body {
-    background: #000000;
+    background-image:
+        linear-gradient(
+            rgba(15, 10, 10, 0.15),
+            rgba(15, 10, 10, 0.20)
+        ),
+        url("togetherpc.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     color: white;
     text-align: center;
     font-family: Arial, sans-serif;
     padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 /* Stylish Heading */
@@ -157,9 +170,20 @@ p {
     box-shadow: 0 0 18px rgba(255, 215, 0, 0.45);
 }
 
-/* Mobile Responsive */
-@media (max-width: 480px) {
+/* Phone Background */
+@media screen and (max-width: 600px) {
     body {
+        background-image:
+            linear-gradient(
+                rgba(15, 10, 10, 0.15),
+                rgba(15, 10, 10, 0.20)
+            ),
+            url("togetherphone.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
         padding: 12px;
     }
 
