@@ -1,35 +1,36 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Surprise 🎁</title>
-
-    <!-- CSS File Link -->
     <link rel="stylesheet" href="surprise.css">
 </head>
 
 <body>
-
-    <h1>🎁 Surprise </h1>
+    <h1>🎁 Surprise</h1>
 
     <p>niku surprise kavala puka 😂❤️</p>
 
-    <br><br>
+    <div class="gift-box" onclick="openGift()">
+        <div class="gift-emoji">🎁</div>
+        <h2>Real Gift ❤️</h2>
+        <p class="box-text">Click to Open 🫣</p>
+    </div>
 
-    <!-- Back Button -->
-    <a href="index.html" class="gift-button">
-        🏠 Back
-    </a>
+    <div id="gift-message" class="gift-message">
+        <h2>Nene niku pedha giftuu 😚❤️</h2>
+        <a href="lastgift.html" class="gift-button">
+            Open Real Gift 💝
+        </a>
+    </div>
 
-    <!-- Real Gift Button -->
-    <a href="lastgift.html" class="gift-button">
-        🎁 real Gift
-    </a>
-
+    <script>
+        function openGift() {
+            document.getElementById("gift-message").style.display = "block";
+        }
+    </script>
 </body>
-
 </html>
+```
