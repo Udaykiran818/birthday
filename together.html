@@ -110,6 +110,36 @@
             card.classList.add("opened");
         }
     </script>
+       <script>
+        function createHeart(x, y) {
+            const heart = document.createElement("span");
+            heart.className = "cursor-heart";
+
+            const symbols = ["❤️", "💕", "💖", "💗", "✨"];
+
+            heart.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            heart.style.left = x + "px";
+            heart.style.top = y + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function () {
+                heart.remove();
+            }, 1000);
+        }
+
+        document.addEventListener("mousemove", function (e) {
+            createHeart(e.clientX, e.clientY);
+        });
+
+        document.addEventListener("touchmove", function (e) {
+            const touch = e.touches[0];
+            createHeart(touch.clientX, touch.clientY);
+        }, { passive: true });
+    </script>
+
 
     <!-- Surprise Page Button -->
     <a href="surprise.html" class="surprise-button">
