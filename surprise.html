@@ -1,10 +1,11 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Surprise 🎁</title>
 
     <style>
@@ -15,6 +16,7 @@
         /* LAPTOP BACKGROUND */
         body {
             background-color: #000000;
+
             background-image:
                 linear-gradient(
                     rgba(0, 0, 0, 0.3),
@@ -27,20 +29,22 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
 
-            color: #FFFFFF;
+            color: #D3D3D3;
             text-align: center;
             margin: 0;
             padding: 60px 20px;
             min-height: 100vh;
         }
 
+        /* HEADING */
         h1 {
             font-family: "Lucida Handwriting", cursive;
             font-size: 50px;
-            color: #FFFFFF;
+            color: #D3D3D3;
             text-shadow: 2px 2px 5px #000000;
         }
 
+        /* MESSAGE */
         p {
             font-family: Georgia, serif;
             font-size: 32px;
@@ -49,21 +53,34 @@
             text-shadow: 2px 2px 5px #000000;
         }
 
+        /* BUTTONS */
         .gift-button {
             display: inline-block;
             font-size: 18px;
             padding: 12px 25px;
             margin: 10px;
+
             border-radius: 15px;
             border: 2px solid #D3D3D3;
+
             background-color: #000000;
-            color: #FFFFFF;
+            color: #D3D3D3;
+
             text-decoration: none;
             cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .gift-button:hover {
+            background-color: #D3D3D3;
+            color: #000000;
+            transform: scale(1.05);
         }
 
         /* PHONE BACKGROUND */
         @media screen and (max-width: 768px) {
+
             body {
                 background-image:
                     linear-gradient(
@@ -92,6 +109,7 @@
             .gift-button {
                 font-size: 16px;
                 padding: 12px 20px;
+                margin: 8px;
             }
         }
     </style>
@@ -105,14 +123,17 @@
 
     <br><br>
 
+    <!-- BACK BUTTON -->
     <a href="index.html" class="gift-button">
         🏠 Back
     </a>
 
+    <!-- REAL GIFT BUTTON -->
     <a href="lastgift.html" class="gift-button">
-        🎁 Real Gift
+        🎁 real Gift
     </a>
 
 </body>
 
 </html>
+```
