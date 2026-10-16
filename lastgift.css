@@ -25,48 +25,53 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-    /* ONLY ZOOM-IN ANIMATION */
-    animation: zoomIn 1.3s ease-out both;
 }
 
-/* ZOOM-IN KEYFRAMES */
+/* ZOOM-IN ANIMATION */
 @keyframes zoomIn {
     from {
-        transform: scale(0.75);
+        transform: scale(0.5);
+        opacity: 0;
     }
 
     to {
         transform: scale(1);
+        opacity: 1;
     }
 }
 
-/* CARTOON HEADING - NO GLOW */
+/* FIRST: GIFT HEADING */
 h1 {
     font-family: 'Luckiest Guy', cursive;
     font-size: clamp(42px, 7vw, 65px);
     color: #FFFFFF;
     text-shadow: none;
+    animation: zoomIn 0.8s ease-out 0.2s both;
 }
 
-/* MAIN MESSAGE - NO GLOW */
+/* SECOND: MAIN MESSAGE */
 .main-message {
-    font-family: Georgia, serif;
-    font-size: clamp(24px, 4vw, 32px);
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 600;
     margin-top: 65px;
     color: #FFFFFF;
     text-shadow: none;
+    line-height: 1.6;
+    animation: zoomIn 0.8s ease-out 1s both;
 }
 
-/* EXTRA MESSAGE - NO GLOW */
+/* THIRD: PARAGRAPH */
 .extra-message {
-    font-family: Georgia, serif;
-    font-size: 20px;
-    line-height: 1.8;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(25px, 3vw, 32px);
+    font-weight: 600;
+    line-height: 1.9;
     margin: 40px auto;
     max-width: 700px;
     color: #FFFFFF;
     text-shadow: none;
+    animation: zoomIn 0.8s ease-out 1.8s both;
 }
 
 /* PHOTOS */
@@ -81,6 +86,23 @@ h1 {
     height: auto;
     border-radius: 20px;
     margin: 25px auto;
+    animation: zoomIn 0.8s ease-out both;
+}
+
+.photos img:nth-child(1) {
+    animation-delay: 2.6s;
+}
+
+.photos img:nth-child(2) {
+    animation-delay: 3.2s;
+}
+
+.photos img:nth-child(3) {
+    animation-delay: 3.8s;
+}
+
+.photos img:nth-child(4) {
+    animation-delay: 4.4s;
 }
 
 /* BACK BUTTON */
@@ -92,4 +114,78 @@ h1 {
     margin: 25px 0;
     border-radius: 15px;
     border: 2px solid #FFFFFF;
-    background-color:
+    background-color: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: zoomIn 0.8s ease-out 4.8s both;
+}
+
+.back-button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* BALLOONS */
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    font-size: 40px;
+    z-index: 9998;
+    pointer-events: none;
+    animation: balloonUp linear forwards;
+}
+
+@keyframes balloonUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* PHONE BACKGROUND */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15)
+            ),
+            url("lastgiftphone.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .main-message {
+        margin-top: 50px;
+    }
+
+    .extra-message {
+        font-size: 25px;
+    }
+
+    .photos img {
+        margin: 20px auto;
+    }
+
+    .back-button {
+        font-size: 15px;
+    }
+}
+```
