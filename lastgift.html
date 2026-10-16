@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,87 +13,66 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            box-sizing: border-box;
+    <!-- CSS File -->
+    <link rel="stylesheet" href="lastgift.css">
+</head>
+
+<body>
+
+    <h1>Gift 😼</h1>
+
+    <p class="main-message">
+        Nene niku pedha giftuu 😚❤️
+    </p>
+
+    <p class="extra-message">
+        Mana friendship ilaane eppatiki undali ❤️
+        <br>
+        Party ivadamm marchipoku 🤤
+        <br><br>
+        And finally...
+        <br>
+        <b>Once Again Happy Birthday Sudheeruuu 🎂❤️</b>
+    </p>
+
+    <!-- Photos -->
+    <div class="photos">
+        <img src="uddu1.jpeg" alt="Our memory 1">
+        <img src="uddu2.jpeg" alt="Our memory 2">
+    </div>
+
+    <br>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        inka ikkada emi ledhu dengey 😂
+    </a>
+
+    <!-- Balloon Animation -->
+    <script>
+        function createBalloon() {
+            const balloon = document.createElement("div");
+            const balloons = ["🎈", "🎈", "🎈", "💖"];
+
+            balloon.className = "balloon";
+            balloon.textContent =
+                balloons[Math.floor(Math.random() * balloons.length)];
+
+            balloon.style.left = Math.random() * 95 + "vw";
+            balloon.style.animationDuration =
+                (5 + Math.random() * 5) + "s";
+
+            document.body.appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 10000);
         }
 
-        body {
-            background-color: #000000;
-            color: #FFFFFF;
-            text-align: center;
-            margin: 0;
-            padding: 40px 20px;
-            overflow-x: hidden;
+        for (let i = 0; i < 12; i++) {
+            setTimeout(createBalloon, i * 350);
         }
 
-        /* CARTOON HEADING */
-        h1 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: clamp(42px, 7vw, 65px);
-            color: #FFFFFF;
-            text-shadow: 0 0 8px #FFFFFF, 0 0 15px #FFFFFF;
-        }
+        setInterval(createBalloon, 900);
+    </script>
 
-        /* MAIN MESSAGE */
-        .main-message {
-            font-family: Georgia, serif;
-            font-size: clamp(24px, 4vw, 32px);
-            margin-top: 65px;
-            color: #FFFFFF;
-            text-shadow: 0 0 6px #FFFFFF, 0 0 12px #FFFFFF;
-        }
-
-        /* EXTRA MESSAGE */
-        .extra-message {
-            font-family: Georgia, serif;
-            font-size: 20px;
-            line-height: 1.8;
-            margin: 40px auto;
-            max-width: 700px;
-            color: white;
-            text-shadow: 0 0 5px white;
-        }
-
-        /* PHOTOS */
-        .photos {
-            margin-top: 40px;
-        }
-
-        .photos img {
-            display: block;
-            width: 100%;
-            max-width: 900px;
-            height: auto;
-            border-radius: 20px;
-            margin: 25px auto;
-        }
-
-        /* BACK BUTTON */
-        .back-button {
-            display: inline-block;
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 17px;
-            padding: 14px 24px;
-            margin: 25px 0;
-            border-radius: 15px;
-            border: 2px solid #FFFFFF;
-            background-color: #000000;
-            color: #FFFFFF;
-            text-decoration: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #FFFFFF;
-            color: #000000;
-            transform: scale(1.05);
-        }
-
-        /* BALLOONS */
-        .balloon {
-            position: fixed;
-            bottom: -100px;
-            font-size: 40px;
-            z
+</body>
+</html>
