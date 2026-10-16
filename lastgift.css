@@ -19,7 +19,7 @@ body {
             rgba(0, 0, 0, 0.20),
             rgba(0, 0, 0, 0.20)
         ),
-        url("./suprisepc.jpg");
+        url("lastgiftpc.jpg");
 
     background-size: cover;
     background-position: center;
@@ -127,7 +127,7 @@ h1 {
                 rgba(0, 0, 0, 0.15),
                 rgba(0, 0, 0, 0.15)
             ),
-            url("./suprisephone.jpg");
+            url("lastgiftphone.jpg");
 
         background-size: cover;
         background-position: center;
