@@ -1,4 +1,4 @@
-
+```css
 /* COMMON SETTINGS */
 * {
     box-sizing: border-box;
@@ -15,10 +15,10 @@ body {
     /* LAPTOP BACKGROUND */
     background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.25)
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15)
         ),
-        url("./surprisepc.jpg");
+        url("./suprisepc.png");
 
     background-size: cover;
     background-position: center;
@@ -69,10 +69,10 @@ p {
     body {
         background-image:
             linear-gradient(
-                rgba(0, 0, 0, 0.2),
-                rgba(0, 0, 0, 0.2)
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15)
             ),
-            url("./surprisephone.jpg");
+            url("./suprisephone.jpg");
 
         background-size: cover;
         background-position: center;
@@ -96,4 +96,4 @@ p {
         margin: 8px;
     }
 }
-
+```
