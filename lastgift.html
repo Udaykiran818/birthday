@@ -50,18 +50,21 @@
 
     <!-- Balloon Animation -->
  <script>
+
 /* BALLOONS - LAPTOP + MOBILE */
 .balloon {
     position: fixed;
-    bottom: -100px;
-    font-size: 40px;
-    z-index: 9999;
+    left: 0;
+    bottom: -80px;
+    font-size: 38px;
+    z-index: 99999;
     pointer-events: none;
+    user-select: none;
+    will-change: transform;
     animation: balloonUp 6s linear forwards;
-    will-change: transform, opacity;
 }
 
-/* BALLOON MOVEMENT */
+/* BALLOON ANIMATION */
 @keyframes balloonUp {
     0% {
         transform: translate3d(0, 0, 0) rotate(0deg);
@@ -78,15 +81,21 @@
     }
 }
 
-/* MOBILE SUPPORT */
+/* MOBILE */
 @media screen and (max-width: 768px) {
     .balloon {
-        position: fixed;
-        font-size: 32px;
-        z-index: 9999;
-        animation: balloonUp 6s linear forwards;
+        font-size: 30px;
+        animation-duration: 6s;
     }
 }
+
+/* REDUCE ANIMATION IF DEVICE REQUESTS IT */
+@media (prefers-reduced-motion: reduce) {
+    .balloon {
+        animation-duration: 6s;
+    }
+}
+
 </script>
 `</body>
 </html>
