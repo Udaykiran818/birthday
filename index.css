@@ -1,4 +1,4 @@
-/* ===== NARUTO BIRTHDAY THEME ===== */
+  /* ===== NARUTO BIRTHDAY THEME ===== */
 
 * {
     box-sizing: border-box;
@@ -303,7 +303,7 @@ img {
                 rgba(15, 10, 10, 0.15),
                 rgba(15, 10, 10, 0.20)
             ),
-            url("nautobg.jpg");
+            url("narutobg.jpg");
 
         background-size: cover;
         background-position: center;
