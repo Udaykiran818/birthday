@@ -16,6 +16,38 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="together.css">
+
+    <!-- Surprise Button CSS -->
+    <style>
+        .surprise-button {
+            display: inline-block;
+            margin: 50px auto 40px;
+            padding: 14px 30px;
+            background: #FFF2B2;
+            color: #222222;
+            border: 3px solid #FFD700;
+            border-radius: 15px;
+            text-decoration: none;
+            font-family: 'Lilita One', cursive;
+            font-size: 22px;
+            box-shadow: 0 5px 0 #000000;
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .surprise-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 9px 0 #000000;
+        }
+
+        @media screen and (max-width: 600px) {
+            .surprise-button {
+                margin-top: 35px;
+                padding: 12px 24px;
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -79,31 +111,10 @@
         }
     </script>
 
-<a href="surprise.html" class="surprise-button">
-    🎁 Open Surprise
-</a>
-
-<style>
-.surprise-button {
-    display: inline-block;
-    margin: 40px auto;
-    padding: 14px 30px;
-    background: #FFF2B2;
-    color: #222222;
-    border: 3px solid #FFD700;
-    border-radius: 15px;
-    text-decoration: none;
-    font-family: 'Lilita One', cursive;
-    font-size: 22px;
-    box-shadow: 0 5px 0 #000000;
-    transition: 0.3s ease;
-}
-
-.surprise-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 9px 0 #000000;
-}
-</style>
+    <!-- Surprise Page Button -->
+    <a href="surprise.html" class="surprise-button">
+        🎁 Open Surprise
+    </a>
 
 </body>
 </html>
