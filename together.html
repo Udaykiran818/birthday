@@ -8,31 +8,39 @@
 
     <title>Us Together 🫂</title>
 
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
           rel="stylesheet">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="together.css">
 
-    <!-- Surprise Button CSS -->
+    <!-- Surprise Button + Cursor Hearts CSS -->
     <style>
+        /* Surprise Button */
         .surprise-button {
             display: inline-block;
             margin: 50px auto 40px;
             padding: 14px 30px;
+
             background: #FFF2B2;
             color: #222222;
+
             border: 3px solid #FFD700;
             border-radius: 15px;
+
             text-decoration: none;
             font-family: 'Lilita One', cursive;
             font-size: 22px;
+
             box-shadow: 0 5px 0 #000000;
-            transition: transform 0.3s ease,
-                        box-shadow 0.3s ease;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
         .surprise-button:hover {
@@ -40,11 +48,45 @@
             box-shadow: 0 9px 0 #000000;
         }
 
+        /* Cursor Hearts */
+        .cursor-heart {
+            position: fixed;
+            z-index: 99999;
+            pointer-events: none;
+
+            font-size: 22px;
+            line-height: 1;
+
+            animation: heartFloat 1s ease-out forwards;
+            will-change: transform, opacity;
+        }
+
+        @keyframes heartFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0.7);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-55px) scale(1.4) rotate(20deg);
+            }
+        }
+
+        /* Phone Responsive */
         @media screen and (max-width: 600px) {
             .surprise-button {
                 margin-top: 35px;
+                margin-bottom: 30px;
                 padding: 12px 24px;
                 font-size: 20px;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .cursor-heart {
+                animation-duration: 0.5s;
             }
         }
     </style>
@@ -52,6 +94,7 @@
 
 <body>
 
+    <!-- Page Heading -->
     <h1>Us Together 🫂❤️</h1>
 
     <p>Open the gift to see our memories 💛</p>
@@ -110,10 +153,12 @@
             card.classList.add("opened");
         }
     </script>
-    
-       <script>
+
+    <!-- Cursor Hearts Animation -->
+    <script>
         function createHeart(x, y) {
             const heart = document.createElement("span");
+
             heart.className = "cursor-heart";
 
             const symbols = ["❤️", "💕", "💖", "💗", "✨"];
@@ -131,16 +176,20 @@
             }, 1000);
         }
 
-        document.addEventListener("mousemove", function (e) {
-            createHeart(e.clientX, e.clientY);
+        // Laptop: hearts follow the mouse
+        document.addEventListener("mousemove", function (event) {
+            createHeart(event.clientX, event.clientY);
         });
 
-        document.addEventListener("touchmove", function (e) {
-            const touch = e.touches[0];
-            createHeart(touch.clientX, touch.clientY);
+        // Phone: hearts appear when touching and moving
+        document.addEventListener("touchmove", function (event) {
+            if (event.touches.length > 0) {
+                const touch = event.touches[0];
+
+                createHeart(touch.clientX, touch.clientY);
+            }
         }, { passive: true });
     </script>
-
 
     <!-- Surprise Page Button -->
     <a href="surprise.html" class="surprise-button">
