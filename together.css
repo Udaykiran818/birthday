@@ -22,15 +22,28 @@ body {
 }
 
 /* Stylish Heading */
+
+/* Us Together Heading - Black Border */
 h1 {
     font-family: 'Lilita One', cursive;
     font-size: clamp(32px, 6vw, 48px);
     font-weight: 400;
     color: #FFD700;
     letter-spacing: 2px;
-    text-shadow: none;
+
+    -webkit-text-stroke: 1.5px #000000;
+    paint-order: stroke fill;
+
+    text-shadow:
+        2px 2px 0 #000000,
+        -2px -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 2px 0 #000000;
+
     animation: titleEnter 1s ease-out both;
 }
+
+
 
 /* Subtitle */
 p {
