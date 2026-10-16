@@ -1,1 +1,128 @@
+```css
+/* COMMON SETTINGS */
+* {
+    box-sizing: border-box;
+}
 
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+/* CARTOON HEADING - NO GLOW */
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: clamp(42px, 7vw, 65px);
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+/* MAIN MESSAGE - NO GLOW */
+.main-message {
+    font-family: Georgia, serif;
+    font-size: clamp(24px, 4vw, 32px);
+    margin-top: 65px;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+/* EXTRA MESSAGE - NO GLOW */
+.extra-message {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 40px auto;
+    max-width: 700px;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+/* PHOTOS */
+.photos {
+    margin-top: 40px;
+}
+
+.photos img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 20px;
+    margin: 25px auto;
+}
+
+/* BACK BUTTON */
+.back-button {
+    display: inline-block;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 17px;
+    padding: 14px 24px;
+    margin: 25px 0;
+    border-radius: 15px;
+    border: 2px solid #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* BALLOONS */
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    font-size: 40px;
+    z-index: 9998;
+    pointer-events: none;
+    animation: balloonUp linear forwards;
+}
+
+@keyframes balloonUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* PHONE RESPONSIVE */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    .main-message {
+        margin-top: 50px;
+    }
+
+    .extra-message {
+        font-size: 18px;
+    }
+
+    .photos img {
+        margin: 20px auto;
+    }
+
+    .back-button {
+        font-size: 15px;
+    }
+}
+```
