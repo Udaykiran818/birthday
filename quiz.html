@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Friend Quiz ❤️</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<main class="game-card">
+    <p class="top-label">SUDHEERUUU'S BIRTHDAY SPECIAL 🎂</p>
+
+    <section id="start-screen">
+        <div class="emoji">🫂</div>
+        <h1>Best Friend <span>Quiz!</span></h1>
+        <p>Let's see how well you know our friendship! 😎❤️</p>
+        <p>🎯 10 Questions | 💯 100 Points | 🎁 Surprise</p>
+        <button class="primary-btn" onclick="startQuiz()">Start Quiz 🚀</button>
+        <p><a href="surprise.html">← Back to Surprise Page</a></p>
+    </section>
+
+    <section id="quiz-screen" class="hidden">
+        <div class="quiz-meta">
+            <span id="counter"></span>
+            <span id="score">Score: 0</span>
+        </div>
+
+        <div class="progress-track">
+            <div id="progress"></div>
+        </div>
+
+        <div id="question-emoji" class="emoji">🤔</div>
+        <h2 id="question"></h2>
+        <div id="answers" class="answers"></div>
+        <p id="feedback"></p>
+
+        <button id="next" class="primary-btn hidden" onclick="nextQuestion()">
+            Next Question ➜
+        </button>
+    </section>
+
+    <section id="result-screen" class="hidden">
+        <div class="emoji" id="result-emoji">🏆</div>
+        <h1 id="result-title">Quiz Completed!</h1>
+        <h2>Your Score: <span id="final-score"></span></h2>
+        <p id="result-message"></p>
+        <button class="primary-btn" onclick="showSurprise()">
+            Open Birthday Surprise 🎁
+        </button>
+        <button class="secondary-btn" onclick="restartQuiz()">Play Again 🔄</button>
+    </section>
+
+    <section id="surprise-screen" class="hidden">
+        <div class="emoji">🎂❤️</div>
+        <h1>Happy Birthday <span>Sudheeruuu!</span></h1>
+
+       
+        <a class="secondary-link" href="index.html">Back to Birthday Home 🏠</a>
+    </section>
+</main>
+
+<footer>Made with ❤️ for Sudheeruuu</footer>
+
+<script>
+const questions = [
+    {
+        emoji: "🫂",
+        q: "What makes our friendship special?",
+        a: ["Trust and understanding ❤️", "Only treats 🍕", "Competition 😤", "Nothing 😴"],
+        correct: 0,
+        msg: "Trust and understanding are everything! ❤️"
+    },
+    {
+        emoji: "😂",
+        q: "What's an important part of friendship?",
+        a: ["Laughing together 😂", "Never talking", "Always serious", "Forgetting each other"],
+        correct: 0,
+        msg: "Our laughs and memories are priceless! 😂"
+    },
+    {
+        emoji: "🎂",
+        q: "What are we celebrating?",
+        a: ["New Year 🎆", "Sudheeruuu's birthday 🎂", "Exam results 📚", "Holiday 🏖️"],
+        correct: 1,
+        msg: "Happy Birthday Sudheeruuu! 🥳"
+    },
+    {
+        emoji: "🤝",
+        q: "A good friend should be there...",
+        a: ["Only when easy", "Only for snacks", "In good and bad times ❤️", "Only in photos"],
+        correct: 2,
+        msg: "Real friendship means supporting each other! 🤝"
+    },
+    {
+        emoji: "🍕",
+        q: "What should a best friend never forget? 😜",
+        a: ["Birthday treat 🍕", "Ignore messages", "Cancel plans", "Hide photos"],
+        correct: 0,
+        msg: "Treat ivvadam marchipoku ra! 🤤"
+    },
+    {
+        emoji: "💬",
+        q: "If your friend feels sad, what should you do?",
+        a: ["Make fun", "Listen and support ❤️", "Ignore them", "Blame them"],
+        correct: 1,
+        msg: "A good friend always listens and supports! 💛"
+    },
+    {
+        emoji: "📸",
+        q: "What do friendship photos help us keep?",
+        a: ["Our memories 📸", "Homework", "Shopping list", "Nothing"],
+        correct: 0,
+        msg: "Photos keep our best memories alive! 📸"
+    },
+    {
+        emoji: "🌟",
+        q: "What matters most in friendship?",
+        a: ["Showing off", "Honesty and caring ❤️", "Counting favours", "Winning arguments"],
+        correct: 1,
+        msg: "Honesty and care make friendship strong! 🌟"
+    },
+    {
+        emoji: "🫶",
+        q: "How long should our friendship last?",
+        a: ["One week", "Until exams", "Forever and ever 🫂", "Birthdays only"],
+        correct: 2,
+        msg: "Mana friendship eppatiki undali ra! 🫂❤️"
+    },
+    {
+        emoji: "🎁",
+        q: "What's the best gift from a best friend?",
+        a: ["Costly things only", "Genuine friendship and memories ❤️", "A lecture", "No wishes"],
+        correct: 1,
+        msg: "Our friendship is priceless! Happy Birthday! 🎂"
+    }
+];
+
+let current = 0;
+let points = 0;
+let answered = false;
+
+function showScreen(id) {
+    ["start-screen", "quiz-screen", "result-screen", "surprise-screen"]
+        .forEach(screen => document.getElementById(screen).classList.add("hidden"));
+
+    document.getElementById(id).classList.remove("hidden");
+    window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function startQuiz() {
+    current = 0;
+    points = 0;
+    showScreen("quiz-screen");
+    renderQuestion();
+}
+
+function renderQuestion() {
+    answered = false;
+    const item = questions[current];
+
+    document.getElementById("counter").textContent =
+        `Question ${current + 1} of ${questions.length}`;
+    document.getElementById("score").textContent = `Score: ${points}`;
+    document.getElementById("progress").style.width =
+        `${current / questions.length * 100}%`;
+
+    document.getElementById("question-emoji").textContent = item.emoji;
+    document.getElementById("question").textContent = item.q;
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("next").classList.add("hidden");
+
+    const box = document.getElementById("answers");
+    box.innerHTML = "";
+
+    item.a.forEach((answer, index) => {
+        const btn = document.createElement("button");
+        btn.className = "answer-btn";
+        btn.textContent = answer;
+        btn.onclick = () => chooseAnswer(index, btn);
+        box.appendChild(btn);
+    });
+}
+
+function chooseAnswer(index, selected) {
+    if (answered) return;
+    answered = true;
+
+    const item = questions[current];
+    const buttons = document.querySelectorAll(".answer-btn");
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (index === item.correct) {
+        points += 10;
+        selected.classList.add("correct");
+        document.getElementById("feedback").textContent = "✅ Correct! " + item.msg;
+    } else {
+        selected.classList.add("incorrect");
+        buttons[item.correct].classList.add("correct");
+        document.getElementById("feedback").textContent = "💛 Not quite! " + item.msg;
+    }
+
+    document.getElementById("score").textContent = `Score: ${points}`;
+    document.getElementById("progress").style.width =
+        `${(current + 1) / questions.length * 100}%`;
+
+    const nextBtn = document.getElementById("next");
+    nextBtn.textContent = current === questions.length - 1
+        ? "See My Result 🏆"
+        : "Next Question ➜";
+    nextBtn.classList.remove("hidden");
+}
+
+function nextQuestion() {
+    if (!answered) return;
+    current++;
+
+    if (current < questions.length) {
+        renderQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    showScreen("result-screen");
+    document.getElementById("final-score").textContent = `${points}/100`;
+
+    let emoji = "💛";
+    let title = "Good Try, Bestie!";
+    let message = "Quiz complete! Our friendship and memories are special. ❤️";
+
+    if (points >= 90) {
+        emoji = "🏆";
+        title = "Friendship Legend!";
+        message = "Abbaa! You are a true friendship legend ra! 🫂";
+    } else if (points >= 70) {
+        emoji = "🌟";
+        title = "Super Bestie!";
+        message = "Chaala baaga aadav ra! ❤️";
+    } else if (points >= 50) {
+        emoji = "😎";
+        title = "Good Bestie!";
+        message = "Inka manchi memories create cheddam! 🫂";
+    }
+
+    document.getElementById("result-emoji").textContent = emoji;
+    document.getElementById("result-title").textContent = title;
+    document.getElementById("result-message").textContent = message;
+}
+
+function showSurprise() {
+    showScreen("surprise-screen");
+}
+
+function restartQuiz() {
+    showScreen("start-screen");
+}
+</script>
+
+</body>
+</html>
